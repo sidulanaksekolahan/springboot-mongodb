@@ -3,7 +3,7 @@ services:
     image: mongo:8.0
     restart: always
     ports:
-      - 37018:27017
+      - "37018:27017"
     environment:
       MONGO_INITDB_ROOT_USERNAME: appuser
       MONGO_INITDB_ROOT_PASSWORD: apppass
@@ -15,7 +15,7 @@ services:
     image: mongo-express:1.0.2-20-alpine3.19
     restart: always
     ports:
-      - 8081:8081
+      - "8081:8081"
     environment:
       ME_CONFIG_MONGODB_URL: mongodb://appuser:apppass@mongo:27017/mydbmongo?authSource=admin
       ME_CONFIG_BASICAUTH_ENABLED: true
@@ -25,7 +25,7 @@ services:
   springboot:
     image: springboot-mongodb:v1.0
     ports:
-      - 8080:8080
+      - "8080:8080"
     depends_on:
       - mongo
     environment:
