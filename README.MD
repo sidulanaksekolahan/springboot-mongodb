@@ -42,3 +42,6 @@ docker compose down
 docker compose up -d
 ```
 
+9. Visit mongo express at http://localhost:8081 and use the following credentials to login:
+* Username: mongoexpressuser
+* Password: mongoexpresspass
